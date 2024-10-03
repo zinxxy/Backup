@@ -9,13 +9,12 @@ RUN apt-get update && \
   npm i pm2 -g && \
   rm -rf /var/lib/apt/lists/*
   
-RUN git clone https://github.com/Toxic1239/RIASGREMORYBOT  /root/Toxic1239
+RUN git clone https://github.com/Toxic1239/Queen-RiasV2  /root/Toxic1239
 WORKDIR /root/Toxic1239/
 
 
 COPY package.json .
-RUN npm install pm2 -g
-RUN npm install --legacy-peer-deps
+RUN npm install && npm install -g qrcode-terminal pm2
 
 COPY . .
 
